@@ -19,6 +19,7 @@ describe Contact do
   it "is invalid wihout an email adress" do
     expect(Contact.new(email: nil)).to have(1).errors_on(:email)
   end
+
   it "is invalid with a duplicate email" do
     Contact.create(
       firstname: 'Antonis',
@@ -30,10 +31,13 @@ describe Contact do
       email: 'test@example.com')
     expect(contact).to have(1).errors_on(:email)
   end
+
   it "returns a contact's full name as a string" do
     contact = Contact.new(firstname: 'Antonis',
       lastname: 'Berkakis',
       email: 'aberkakis@gmail.com')
     expect(contact.name).to eq 'Antonis Berkakis'
   end
+
+  it "returns a sorted array of results that match"
 end
