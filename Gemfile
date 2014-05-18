@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -46,14 +47,16 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem 'guard-rspec', '~> 3.0.2'
-  gem 'guard-spork', '~> 1.5.1'
-  gem 'spork-rails', github: 'sporkrb/spork-rails'
   gem 'rb-fsevent', '~> 0.9.3'
 end
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
   gem "factory_girl_rails", "~> 4.2.1"
+  gem 'zeus'
+  gem 'guard-zeus'
+  gem 'guard'
+  gem 'guard-bundler'
 end
 
 group :test do
